@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "DBManager.h"
+#import "ChecklistsDate.h"
+#import "ChecklistItemModel.h"
+#import "ChecklistModel.h"
 
 @interface AppDelegate ()
 
@@ -16,8 +20,20 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self setBasicDataInitialization];
     return YES;
+}
+
+- (void)setBasicDataInitialization{
+    DBManager *dbManager = [ChecklistsDate shareManager].dbManager;
+    //creat table
+//    [dbManager excuteSQLs:@[[NSString stringWithFormat:@"DROP TABLE %@",listItemTableName]]];
+    
+//    [dbManager excuteSQLs:@[[NSString stringWithFormat:@"DROP TABLE %@",listsTableName]]];
+    
+    [dbManager createTableName:listsTableName columns:[ChecklistModel dictionaryOfPropertiesAndTypes]];
+    
+//    [dbManager createTableName:listItemTableName columns:[ChecklistItemModel dictionaryOfPropertiesAndTypes]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

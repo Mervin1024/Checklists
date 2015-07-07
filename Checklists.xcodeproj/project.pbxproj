@@ -7,15 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C96DB5EB1B4ABA4B00114622 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = C96DB5DF1B4ABA4B00114622 /* FMDatabase.m */; };
+		C96DB5EC1B4ABA4B00114622 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C96DB5E11B4ABA4B00114622 /* FMDatabaseAdditions.m */; };
+		C96DB5ED1B4ABA4B00114622 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = C96DB5E31B4ABA4B00114622 /* FMDatabasePool.m */; };
+		C96DB5EE1B4ABA4B00114622 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C96DB5E51B4ABA4B00114622 /* FMDatabaseQueue.m */; };
+		C96DB5EF1B4ABA4B00114622 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = C96DB5E81B4ABA4B00114622 /* FMResultSet.m */; };
+		C96DB5F11B4ABB6800114622 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C96DB5F01B4ABB6800114622 /* libsqlite3.dylib */; };
+		C96DB5F71B4B994200114622 /* AllListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96DB5F61B4B994200114622 /* AllListsViewController.m */; };
+		C96DB5FA1B4B9D9700114622 /* ChecklistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C96DB5F91B4B9D9700114622 /* ChecklistModel.m */; };
+		C96DB5FD1B4BB08E00114622 /* ListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96DB5FC1B4BB08E00114622 /* ListDetailViewController.m */; };
 		C99470241A7778B2005016D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C99470231A7778B2005016D2 /* main.m */; };
 		C99470271A7778B2005016D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C99470261A7778B2005016D2 /* AppDelegate.m */; };
-		C994702A1A7778B2005016D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C99470291A7778B2005016D2 /* ViewController.m */; };
+		C994702A1A7778B2005016D2 /* ChecklistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C99470291A7778B2005016D2 /* ChecklistViewController.m */; };
 		C994702D1A7778B2005016D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C994702B1A7778B2005016D2 /* Main.storyboard */; };
 		C994702F1A7778B2005016D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C994702E1A7778B2005016D2 /* Images.xcassets */; };
 		C99470321A7778B2005016D2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C99470301A7778B2005016D2 /* LaunchScreen.xib */; };
 		C994703E1A7778B2005016D2 /* ChecklistsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C994703D1A7778B2005016D2 /* ChecklistsTests.m */; };
-		C9C3A1A31A78E2E4009AA315 /* ChecklistItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C3A1A21A78E2E4009AA315 /* ChecklistItem.m */; };
-		C9D3EB151A81D0FD00D8325A /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D3EB141A81D0FD00D8325A /* AddItemViewController.m */; };
+		C9A46AF31B4A51EB00A9468D /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A46AF21B4A51EB00A9468D /* DBManager.m */; };
+		C9A46AFA1B4A576200A9468D /* NSArray+Assemble.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A46AF91B4A576200A9468D /* NSArray+Assemble.m */; };
+		C9A46AFD1B4A5B3900A9468D /* NSDictionary+Assemble.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A46AFC1B4A5B3900A9468D /* NSDictionary+Assemble.m */; };
+		C9A46B001B4A5B5700A9468D /* NSString+Format.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A46AFF1B4A5B5700A9468D /* NSString+Format.m */; };
+		C9A46B061B4A7A5E00A9468D /* ChecklistsDate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A46B051B4A7A5E00A9468D /* ChecklistsDate.m */; };
+		C9A46B0A1B4A7E8C00A9468D /* ChecklistItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A46B091B4A7E8C00A9468D /* ChecklistItemModel.m */; };
+		C9D3EB151A81D0FD00D8325A /* ItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D3EB141A81D0FD00D8325A /* ItemDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,23 +43,51 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C96DB5DE1B4ABA4B00114622 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		C96DB5DF1B4ABA4B00114622 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		C96DB5E01B4ABA4B00114622 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		C96DB5E11B4ABA4B00114622 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		C96DB5E21B4ABA4B00114622 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		C96DB5E31B4ABA4B00114622 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		C96DB5E41B4ABA4B00114622 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		C96DB5E51B4ABA4B00114622 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		C96DB5E61B4ABA4B00114622 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		C96DB5E71B4ABA4B00114622 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		C96DB5E81B4ABA4B00114622 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		C96DB5F01B4ABB6800114622 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		C96DB5F51B4B994200114622 /* AllListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllListsViewController.h; sourceTree = "<group>"; };
+		C96DB5F61B4B994200114622 /* AllListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllListsViewController.m; sourceTree = "<group>"; };
+		C96DB5F81B4B9D9700114622 /* ChecklistModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChecklistModel.h; sourceTree = "<group>"; };
+		C96DB5F91B4B9D9700114622 /* ChecklistModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChecklistModel.m; sourceTree = "<group>"; };
+		C96DB5FB1B4BB08E00114622 /* ListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListDetailViewController.h; sourceTree = "<group>"; };
+		C96DB5FC1B4BB08E00114622 /* ListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListDetailViewController.m; sourceTree = "<group>"; };
 		C994701E1A7778B2005016D2 /* Checklists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C99470221A7778B2005016D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C99470231A7778B2005016D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C99470251A7778B2005016D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C99470261A7778B2005016D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C99470281A7778B2005016D2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C99470291A7778B2005016D2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C99470281A7778B2005016D2 /* ChecklistViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChecklistViewController.h; sourceTree = "<group>"; };
+		C99470291A7778B2005016D2 /* ChecklistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChecklistViewController.m; sourceTree = "<group>"; };
 		C994702C1A7778B2005016D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C994702E1A7778B2005016D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C99470311A7778B2005016D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C99470371A7778B2005016D2 /* ChecklistsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChecklistsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C994703C1A7778B2005016D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C994703D1A7778B2005016D2 /* ChecklistsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChecklistsTests.m; sourceTree = "<group>"; };
-		C9C3A1A11A78E2E4009AA315 /* ChecklistItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChecklistItem.h; sourceTree = "<group>"; };
-		C9C3A1A21A78E2E4009AA315 /* ChecklistItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChecklistItem.m; sourceTree = "<group>"; };
-		C9D3EB131A81D0FD00D8325A /* AddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItemViewController.h; sourceTree = "<group>"; };
-		C9D3EB141A81D0FD00D8325A /* AddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItemViewController.m; sourceTree = "<group>"; };
+		C9A46AF11B4A51EB00A9468D /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		C9A46AF21B4A51EB00A9468D /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		C9A46AF81B4A576200A9468D /* NSArray+Assemble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Assemble.h"; sourceTree = "<group>"; };
+		C9A46AF91B4A576200A9468D /* NSArray+Assemble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Assemble.m"; sourceTree = "<group>"; };
+		C9A46AFB1B4A5B3900A9468D /* NSDictionary+Assemble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Assemble.h"; sourceTree = "<group>"; };
+		C9A46AFC1B4A5B3900A9468D /* NSDictionary+Assemble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Assemble.m"; sourceTree = "<group>"; };
+		C9A46AFE1B4A5B5700A9468D /* NSString+Format.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Format.h"; sourceTree = "<group>"; };
+		C9A46AFF1B4A5B5700A9468D /* NSString+Format.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Format.m"; sourceTree = "<group>"; };
+		C9A46B041B4A7A5E00A9468D /* ChecklistsDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChecklistsDate.h; sourceTree = "<group>"; };
+		C9A46B051B4A7A5E00A9468D /* ChecklistsDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChecklistsDate.m; sourceTree = "<group>"; };
+		C9A46B081B4A7E8C00A9468D /* ChecklistItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChecklistItemModel.h; sourceTree = "<group>"; };
+		C9A46B091B4A7E8C00A9468D /* ChecklistItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChecklistItemModel.m; sourceTree = "<group>"; };
+		C9D3EB131A81D0FD00D8325A /* ItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetailViewController.h; sourceTree = "<group>"; };
+		C9D3EB141A81D0FD00D8325A /* ItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96DB5F11B4ABB6800114622 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +109,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C96DB5DD1B4ABA4B00114622 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				C96DB5DE1B4ABA4B00114622 /* FMDatabase.h */,
+				C96DB5DF1B4ABA4B00114622 /* FMDatabase.m */,
+				C96DB5E01B4ABA4B00114622 /* FMDatabaseAdditions.h */,
+				C96DB5E11B4ABA4B00114622 /* FMDatabaseAdditions.m */,
+				C96DB5E21B4ABA4B00114622 /* FMDatabasePool.h */,
+				C96DB5E31B4ABA4B00114622 /* FMDatabasePool.m */,
+				C96DB5E41B4ABA4B00114622 /* FMDatabaseQueue.h */,
+				C96DB5E51B4ABA4B00114622 /* FMDatabaseQueue.m */,
+				C96DB5E61B4ABA4B00114622 /* FMDB.h */,
+				C96DB5E71B4ABA4B00114622 /* FMResultSet.h */,
+				C96DB5E81B4ABA4B00114622 /* FMResultSet.m */,
+			);
+			name = fmdb;
+			path = ../../MyWeibo/Pods/FMDB/src/fmdb;
+			sourceTree = "<group>";
+		};
+		C96DB5FE1B4BB30200114622 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				C96DB5F51B4B994200114622 /* AllListsViewController.h */,
+				C96DB5F61B4B994200114622 /* AllListsViewController.m */,
+				C99470281A7778B2005016D2 /* ChecklistViewController.h */,
+				C99470291A7778B2005016D2 /* ChecklistViewController.m */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		C96DB5FF1B4BB31A00114622 /* Detal */ = {
+			isa = PBXGroup;
+			children = (
+				C96DB5FB1B4BB08E00114622 /* ListDetailViewController.h */,
+				C96DB5FC1B4BB08E00114622 /* ListDetailViewController.m */,
+				C9D3EB131A81D0FD00D8325A /* ItemDetailViewController.h */,
+				C9D3EB141A81D0FD00D8325A /* ItemDetailViewController.m */,
+			);
+			name = Detal;
+			sourceTree = "<group>";
+		};
 		C99470151A7778B2005016D2 = {
 			isa = PBXGroup;
 			children = (
@@ -87,18 +171,14 @@
 		C99470201A7778B2005016D2 /* Checklists */ = {
 			isa = PBXGroup;
 			children = (
+				C994702E1A7778B2005016D2 /* Images.xcassets */,
 				C99470251A7778B2005016D2 /* AppDelegate.h */,
 				C99470261A7778B2005016D2 /* AppDelegate.m */,
-				C99470281A7778B2005016D2 /* ViewController.h */,
-				C99470291A7778B2005016D2 /* ViewController.m */,
-				C994702B1A7778B2005016D2 /* Main.storyboard */,
-				C994702E1A7778B2005016D2 /* Images.xcassets */,
-				C99470301A7778B2005016D2 /* LaunchScreen.xib */,
+				C9A46B021B4A759B00A9468D /* View */,
+				C9A46B011B4A757600A9468D /* Controller */,
+				C9A46B071B4A7E5700A9468D /* Model */,
+				C9A46AF51B4A55BF00A9468D /* Utils */,
 				C99470211A7778B2005016D2 /* Supporting Files */,
-				C9C3A1A11A78E2E4009AA315 /* ChecklistItem.h */,
-				C9C3A1A21A78E2E4009AA315 /* ChecklistItem.m */,
-				C9D3EB131A81D0FD00D8325A /* AddItemViewController.h */,
-				C9D3EB141A81D0FD00D8325A /* AddItemViewController.m */,
 			);
 			path = Checklists;
 			sourceTree = "<group>";
@@ -106,6 +186,7 @@
 		C99470211A7778B2005016D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C96DB5F01B4ABB6800114622 /* libsqlite3.dylib */,
 				C99470221A7778B2005016D2 /* Info.plist */,
 				C99470231A7778B2005016D2 /* main.m */,
 			);
@@ -127,6 +208,78 @@
 				C994703C1A7778B2005016D2 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C9A46AF01B4A515500A9468D /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				C9A46AF11B4A51EB00A9468D /* DBManager.h */,
+				C9A46AF21B4A51EB00A9468D /* DBManager.m */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+		C9A46AF41B4A55B500A9468D /* Categroies */ = {
+			isa = PBXGroup;
+			children = (
+				C9A46AF81B4A576200A9468D /* NSArray+Assemble.h */,
+				C9A46AF91B4A576200A9468D /* NSArray+Assemble.m */,
+				C9A46AFB1B4A5B3900A9468D /* NSDictionary+Assemble.h */,
+				C9A46AFC1B4A5B3900A9468D /* NSDictionary+Assemble.m */,
+				C9A46AFE1B4A5B5700A9468D /* NSString+Format.h */,
+				C9A46AFF1B4A5B5700A9468D /* NSString+Format.m */,
+			);
+			name = Categroies;
+			sourceTree = "<group>";
+		};
+		C9A46AF51B4A55BF00A9468D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C96DB5DD1B4ABA4B00114622 /* fmdb */,
+				C9A46B031B4A7A3400A9468D /* Kits */,
+				C9A46AF01B4A515500A9468D /* Database */,
+				C9A46AF41B4A55B500A9468D /* Categroies */,
+			);
+			name = Utils;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		C9A46B011B4A757600A9468D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C96DB5FE1B4BB30200114622 /* List */,
+				C96DB5FF1B4BB31A00114622 /* Detal */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C9A46B021B4A759B00A9468D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C994702B1A7778B2005016D2 /* Main.storyboard */,
+				C99470301A7778B2005016D2 /* LaunchScreen.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C9A46B031B4A7A3400A9468D /* Kits */ = {
+			isa = PBXGroup;
+			children = (
+				C9A46B041B4A7A5E00A9468D /* ChecklistsDate.h */,
+				C9A46B051B4A7A5E00A9468D /* ChecklistsDate.m */,
+			);
+			name = Kits;
+			sourceTree = "<group>";
+		};
+		C9A46B071B4A7E5700A9468D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C96DB5F81B4B9D9700114622 /* ChecklistModel.h */,
+				C96DB5F91B4B9D9700114622 /* ChecklistModel.m */,
+				C9A46B081B4A7E8C00A9468D /* ChecklistItemModel.h */,
+				C9A46B091B4A7E8C00A9468D /* ChecklistItemModel.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,11 +382,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C994702A1A7778B2005016D2 /* ViewController.m in Sources */,
+				C994702A1A7778B2005016D2 /* ChecklistViewController.m in Sources */,
 				C99470271A7778B2005016D2 /* AppDelegate.m in Sources */,
+				C96DB5ED1B4ABA4B00114622 /* FMDatabasePool.m in Sources */,
+				C9A46B061B4A7A5E00A9468D /* ChecklistsDate.m in Sources */,
 				C99470241A7778B2005016D2 /* main.m in Sources */,
-				C9D3EB151A81D0FD00D8325A /* AddItemViewController.m in Sources */,
-				C9C3A1A31A78E2E4009AA315 /* ChecklistItem.m in Sources */,
+				C96DB5EE1B4ABA4B00114622 /* FMDatabaseQueue.m in Sources */,
+				C96DB5EB1B4ABA4B00114622 /* FMDatabase.m in Sources */,
+				C96DB5FD1B4BB08E00114622 /* ListDetailViewController.m in Sources */,
+				C96DB5EC1B4ABA4B00114622 /* FMDatabaseAdditions.m in Sources */,
+				C96DB5EF1B4ABA4B00114622 /* FMResultSet.m in Sources */,
+				C9A46AFA1B4A576200A9468D /* NSArray+Assemble.m in Sources */,
+				C96DB5F71B4B994200114622 /* AllListsViewController.m in Sources */,
+				C9A46B001B4A5B5700A9468D /* NSString+Format.m in Sources */,
+				C9D3EB151A81D0FD00D8325A /* ItemDetailViewController.m in Sources */,
+				C9A46B0A1B4A7E8C00A9468D /* ChecklistItemModel.m in Sources */,
+				C96DB5FA1B4B9D9700114622 /* ChecklistModel.m in Sources */,
+				C9A46AF31B4A51EB00A9468D /* DBManager.m in Sources */,
+				C9A46AFD1B4A5B3900A9468D /* NSDictionary+Assemble.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
