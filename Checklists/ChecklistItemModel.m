@@ -12,6 +12,7 @@
 #import "NSArray+Assemble.h"
 #import "NSDictionary+Assemble.h"
 #import "NSString+Format.h"
+#import "NSDate+Assemble.h"
 
 @interface ChecklistItemModel(){
     DBManager *dbManager;
@@ -26,6 +27,8 @@
 @synthesize checked;
 @synthesize columns;
 @synthesize list_tableName;
+@synthesize dueDate;
+@synthesize shouldRemind;
 
 - (ChecklistItemModel *)initChecklists{
     if ((self = [super init])) {
@@ -36,16 +39,16 @@
     return self;
 }
 
-- (ChecklistItemModel *)initWithTableName:(NSString *)name ListID:(NSString *)listID Text:(NSString *)text andChecked:(BOOL)check{
+- (ChecklistItemModel *)initWithTableName:(NSString *)name ListID:(NSString *)listID Text:(NSString *)text Checked:(BOOL)check dueDate:(NSDate *)date shouldRemind:(BOOL)remind{
     if ((self = [super init])) {
         dbManager = [ChecklistsDate shareManager].dbManager;
         columns = [ChecklistItemModel arrayOfProperties];
-        if (listID) {
-            list_id = listID;
-        }
+        list_id = listID;
         list_tableName = name;
         list_text = text;
         checked = check;
+        dueDate = date;
+        shouldRemind = remind;
     }
     return self;
 }
@@ -56,18 +59,18 @@
 //}
 
 + (NSArray *) arrayOfProperties{
-    return @[listItemID,listItemText,listItemChecked];
+    return @[listItemID,listItemText,listItemChecked,listItemShouldRemind,listItemDueDate];
 }
 
 - (NSDictionary *) dictionaryOfdata{
     if (list_id) {
-        return [NSDictionary dictionaryWithObjects:@[list_id,list_text,[self stringWithChecked]] forKeys:@[listItemID,listItemText,listItemChecked]];
+        return [NSDictionary dictionaryWithObjects:@[list_id,list_text,[self stringWithChecked],[self stringWithRemind],[dueDate stringFromDate]] forKeys:@[listItemID,listItemText,listItemChecked,listItemShouldRemind,listItemDueDate]];
     }
-    return [NSDictionary dictionaryWithObjects:@[list_text,[self stringWithChecked]] forKeys:@[listItemText,listItemChecked]];
+    return [NSDictionary dictionaryWithObjects:@[list_text,[self stringWithChecked],[self stringWithRemind],[dueDate stringFromDate]] forKeys:@[listItemText,listItemChecked,listItemShouldRemind,listItemDueDate]];
 }
 
 + (NSDictionary *) dictionaryOfPropertiesAndTypes{
-    NSArray *types = @[primaryKey,textType,textType];
+    NSArray *types = @[primaryKey,textType,textType,textType,textType];
     return [NSDictionary dictionaryWithObjects:types forKeys:[ChecklistItemModel arrayOfProperties]];
 }
 
@@ -86,12 +89,25 @@
         return @"NO";
 }
 
-- (NSDictionary *)dictionaryOfText:(NSString *)text{
-    if (text) {
-        list_text = text;
-        return [NSDictionary dictionaryWithObjects:@[text,[self stringWithChecked]] forKeys:@[listItemText,listItemChecked]];
-    }
-    return 0;
+- (NSString *)stringWithRemind{
+    if (self.shouldRemind) {
+        return @"YES";
+    }else
+        return @"NO";
+}
+
+- (void) insertItemToTable{
+    [dbManager insertItemsToTableName:list_tableName columns:[self dictionaryOfdata]];
+}
+
+- (void) updateStateToTable{
+    [dbManager updateItemsTableName:list_tableName set:@{listItemText:self.list_text} where:@{listItemID:self.list_id}];
+    [dbManager updateItemsTableName:list_tableName set:@{listItemShouldRemind:[self stringWithRemind]} where:@{listItemID:self.list_id}];
+    [dbManager updateItemsTableName:list_tableName set:@{listItemDueDate:[self.dueDate stringFromDate]} where:@{listItemID:self.list_id}];
+}
+
+- (void) updateCheckedToTable{
+    [dbManager updateItemsTableName:list_tableName set:@{listItemChecked:[self stringWithChecked]} where:@{listItemID:self.list_id}];
 }
 
 @end

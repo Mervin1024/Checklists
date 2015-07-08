@@ -17,11 +17,18 @@ extern NSString *const primaryKey;
 extern NSString *const textType;
 
 //extern NSString *const listItemTableName;
+extern NSString *const iconName;
+
 extern NSString *const listItemID;
 extern NSString *const listItemText;
 extern NSString *const listItemChecked;
+extern NSString *const listItemDueDate;
+extern NSString *const listItemShouldRemind;
 
 extern NSString *const listsTableName;
 extern NSString *const listsID;
 extern NSString *const listsName;
+
+extern NSString *const ChecklistIndex;
+extern NSString *const firstTime;
 @end

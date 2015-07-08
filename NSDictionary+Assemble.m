@@ -9,6 +9,7 @@
 #import "NSDictionary+Assemble.h"
 #import "NSArray+Assemble.h"
 #import "NSString+Format.h"
+#import "ChecklistsDate.h"
 
 @implementation NSDictionary (Assemble)
 
@@ -42,6 +43,11 @@
     string = [pairs stringByJoinSimplyWithBoundary:boundary];
 //    NSLog(@"NSDictionary--NSString:%@",string);
     return string;
+}
+
+- (NSComparisonResult)comparelist:(NSDictionary *)otherObject{
+//    NSLog(@"compares");
+    return [[self objectForKey:listsName] localizedStandardCompare:[otherObject objectForKey:listsName]];
 }
 
 @end

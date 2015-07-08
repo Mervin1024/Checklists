@@ -16,9 +16,11 @@
 -(void)itemDetailViewControllerDidCancel:(ItemDetailViewController*)controller;
 -(void)itemDetailViewController:(ItemDetailViewController*)controller didFinishAddingItem:(ChecklistItemModel*)item;
 @end
-@interface ItemDetailViewController : UITableViewController<UITextViewDelegate>
+@interface ItemDetailViewController : UITableViewController<UITextFieldDelegate>
 @property(weak,nonatomic) id <ItemDetailViewControllerDelegate> delegate;
 @property(strong,nonatomic) ChecklistItemModel *itemToEdit;
+@property (weak, nonatomic) IBOutlet UISwitch *switchController;
+@property (weak, nonatomic) IBOutlet UILabel *dueDateLabel;
 
 - (IBAction)Cancel:(id)sender;
 - (IBAction)Done:(id)sender;

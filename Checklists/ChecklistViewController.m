@@ -45,28 +45,15 @@
     tableData = self.checklist.listItems;
     dbManager = [ChecklistsDate shareManager].dbManager;
     tableName = self.checklist.list_name;
+    self.tableView.rowHeight = 44.0f;
 //    self.count = [ChecklistItemModel countOfLists];
 }
 
 - (void)initDB{
     NSLog(@"initDB");
     listTable = [[ChecklistItemModel alloc] initChecklists];
-    [dbManager createTableName:tableName columns:[ChecklistItemModel dictionaryOfPropertiesAndTypes]];
-//    if ([dbManager countOfItemsNumberInTable:tableName] < 10) {
-//        for (int i = 0; i < 5; i++) {
-//            NSDictionary *text1 = [listTable dictionaryOfText:@"雷扬是傻吊"];
-//            NSDictionary *text2 = [listTable dictionaryOfText:@"考斌是傻吊"];
-//            [dbManager insertItemsToTableName:tableName columns:text1];
-//            [dbManager insertItemsToTableName:tableName columns:text2];
-//        }
-//    }
-}
 
-//- (void)insertItemsToTableData{
-//    NSLog(@"insertToTableData");
-//    [tableData addObjectsFromArray:[dbManager arrayOfAllBySelect:listTable.columns fromTable:tableName where:nil]];
-//    NSLog(@"count of tableData:%lu",(unsigned long)tableData.count);
-//}
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -119,7 +106,7 @@
     }else{
         label.text = @"";
     }
-    
+    label.textColor = self.view.tintColor;
 }
 
 - (void)configureTextForCell:(UITableViewCell *)cell withChecklistItem:(ChecklistItemModel *)item{
@@ -133,7 +120,7 @@
     UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"Item"];
 //    UILabel *label =(UILabel*)[cell viewWithTag:1024];
     NSDictionary *items = tableData[indexPath.row];
-    ChecklistItemModel *item = [[ChecklistItemModel alloc]initWithTableName:tableName ListID:[items objectForKey:listItemID] Text:[items objectForKey:listItemText] andChecked:[[items objectForKey:listItemChecked] isYes]];
+    ChecklistItemModel *item = [[ChecklistItemModel alloc]initWithTableName:tableName ListID:[items objectForKey:listItemID] Text:[items objectForKey:listItemText] Checked:[[items objectForKey:listItemChecked] isYes] dueDate:[[items objectForKey:listItemDueDate] dateFromString] shouldRemind:[[items objectForKey:listItemShouldRemind] isYes]];
 //    label.text = [item objectForKey:@"list_text"];
     
     
@@ -148,13 +135,14 @@
     NSLog(@"didSelect");
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     NSDictionary *items = tableData[indexPath.row];
-    NSString *listID = [items objectForKey:listItemID];
-    ChecklistItemModel *item = [[ChecklistItemModel alloc]initWithTableName:tableName ListID:listID Text:[items objectForKey:listItemText] andChecked:[[items objectForKey:listItemChecked] isYes]];
+//    NSString *listID = [items objectForKey:listItemID];
+    ChecklistItemModel *item = [[ChecklistItemModel alloc]initWithTableName:tableName ListID:[items objectForKey:listItemID] Text:[items objectForKey:listItemText] Checked:[[items objectForKey:listItemChecked] isYes] dueDate:[[items objectForKey:listItemDueDate] dateFromString] shouldRemind:[[items objectForKey:listItemShouldRemind] isYes]];
     NSLog(@"item_checked1:%@",[item stringWithChecked]);
     [item toggleChecked];
     NSLog(@"item_checked2:%@",[item stringWithChecked]);
     tableData[indexPath.row] = [item dictionaryOfdata];
-    [dbManager updateItemsTableName:tableName set:@{listItemChecked:[item stringWithChecked]} where:@{listItemID:listID}];
+//    [dbManager updateItemsTableName:tableName set:@{listItemChecked:[item stringWithChecked]} where:@{listItemID:listID}];
+    [item updateCheckedToTable];
     
     
     [self configureCheckmarkForCell:cell withChecklistItem:item];
@@ -166,7 +154,7 @@
 #pragma mark - deleteRows
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *list_id = [tableData[indexPath.row] objectForKey:listItemID];
-    ChecklistItemModel *item = [[ChecklistItemModel alloc]initWithTableName:tableName ListID:list_id Text:[tableData[indexPath.row] objectForKey:listItemText] andChecked:[[tableData[indexPath.row] objectForKey:listItemChecked] isYes]];
+    ChecklistItemModel *item = [[ChecklistItemModel alloc]initWithTableName:tableName ListID:list_id Text:[tableData[indexPath.row] objectForKey:listItemText] Checked:[[tableData[indexPath.row] objectForKey:listItemChecked] isYes] dueDate:[[tableData[indexPath.row] objectForKey:listItemDueDate] dateFromString] shouldRemind:[[tableData[indexPath.row] objectForKey:listItemShouldRemind] isYes]];
     [item deleteItemWithID:list_id];
     [tableData removeObjectAtIndex:indexPath.row];
     
@@ -198,7 +186,7 @@
         
         NSIndexPath * indexPath = [self.tableView indexPathForCell:sender];
         NSInteger row = indexPath.row;
-        controller.itemToEdit =[[ChecklistItemModel alloc]initWithTableName:tableName ListID:[tableData[row] objectForKey:listItemID] Text:[tableData[row] objectForKey:listItemText] andChecked:[[tableData[row] objectForKey:listItemChecked] isYes]];
+        controller.itemToEdit =[[ChecklistItemModel alloc]initWithTableName:tableName ListID:[tableData[row] objectForKey:listItemID] Text:[tableData[row] objectForKey:listItemText] Checked:[[tableData[row] objectForKey:listItemChecked] isYes] dueDate:[[tableData[row] objectForKey:listItemDueDate] dateFromString] shouldRemind:[[tableData[row] objectForKey:listItemShouldRemind] isYes]];
         
         
     }

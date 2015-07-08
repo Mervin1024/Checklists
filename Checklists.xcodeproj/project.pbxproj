@@ -16,6 +16,9 @@
 		C96DB5F71B4B994200114622 /* AllListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96DB5F61B4B994200114622 /* AllListsViewController.m */; };
 		C96DB5FA1B4B9D9700114622 /* ChecklistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C96DB5F91B4B9D9700114622 /* ChecklistModel.m */; };
 		C96DB5FD1B4BB08E00114622 /* ListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96DB5FC1B4BB08E00114622 /* ListDetailViewController.m */; };
+		C96DB6021B4C155100114622 /* UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = C96DB6011B4C155100114622 /* UserDefaults.m */; };
+		C96DB6051B4D0BC100114622 /* IconPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96DB6041B4D0BC100114622 /* IconPickerViewController.m */; };
+		C96DB6081B4D3C2800114622 /* NSDate+Assemble.m in Sources */ = {isa = PBXBuildFile; fileRef = C96DB6071B4D3C2800114622 /* NSDate+Assemble.m */; };
 		C99470241A7778B2005016D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C99470231A7778B2005016D2 /* main.m */; };
 		C99470271A7778B2005016D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C99470261A7778B2005016D2 /* AppDelegate.m */; };
 		C994702A1A7778B2005016D2 /* ChecklistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C99470291A7778B2005016D2 /* ChecklistViewController.m */; };
@@ -61,6 +64,12 @@
 		C96DB5F91B4B9D9700114622 /* ChecklistModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChecklistModel.m; sourceTree = "<group>"; };
 		C96DB5FB1B4BB08E00114622 /* ListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListDetailViewController.h; sourceTree = "<group>"; };
 		C96DB5FC1B4BB08E00114622 /* ListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListDetailViewController.m; sourceTree = "<group>"; };
+		C96DB6001B4C155100114622 /* UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaults.h; sourceTree = "<group>"; };
+		C96DB6011B4C155100114622 /* UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaults.m; sourceTree = "<group>"; };
+		C96DB6031B4D0BC100114622 /* IconPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconPickerViewController.h; sourceTree = "<group>"; };
+		C96DB6041B4D0BC100114622 /* IconPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconPickerViewController.m; sourceTree = "<group>"; };
+		C96DB6061B4D3C2800114622 /* NSDate+Assemble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Assemble.h"; sourceTree = "<group>"; };
+		C96DB6071B4D3C2800114622 /* NSDate+Assemble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Assemble.m"; sourceTree = "<group>"; };
 		C994701E1A7778B2005016D2 /* Checklists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C99470221A7778B2005016D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C99470231A7778B2005016D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -135,6 +144,8 @@
 				C96DB5F61B4B994200114622 /* AllListsViewController.m */,
 				C99470281A7778B2005016D2 /* ChecklistViewController.h */,
 				C99470291A7778B2005016D2 /* ChecklistViewController.m */,
+				C96DB6031B4D0BC100114622 /* IconPickerViewController.h */,
+				C96DB6041B4D0BC100114622 /* IconPickerViewController.m */,
 			);
 			name = List;
 			sourceTree = "<group>";
@@ -228,6 +239,8 @@
 				C9A46AFC1B4A5B3900A9468D /* NSDictionary+Assemble.m */,
 				C9A46AFE1B4A5B5700A9468D /* NSString+Format.h */,
 				C9A46AFF1B4A5B5700A9468D /* NSString+Format.m */,
+				C96DB6061B4D3C2800114622 /* NSDate+Assemble.h */,
+				C96DB6071B4D3C2800114622 /* NSDate+Assemble.m */,
 			);
 			name = Categroies;
 			sourceTree = "<group>";
@@ -267,6 +280,8 @@
 			children = (
 				C9A46B041B4A7A5E00A9468D /* ChecklistsDate.h */,
 				C9A46B051B4A7A5E00A9468D /* ChecklistsDate.m */,
+				C96DB6001B4C155100114622 /* UserDefaults.h */,
+				C96DB6011B4C155100114622 /* UserDefaults.m */,
 			);
 			name = Kits;
 			sourceTree = "<group>";
@@ -383,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C994702A1A7778B2005016D2 /* ChecklistViewController.m in Sources */,
+				C96DB6021B4C155100114622 /* UserDefaults.m in Sources */,
 				C99470271A7778B2005016D2 /* AppDelegate.m in Sources */,
 				C96DB5ED1B4ABA4B00114622 /* FMDatabasePool.m in Sources */,
 				C9A46B061B4A7A5E00A9468D /* ChecklistsDate.m in Sources */,
@@ -392,12 +408,14 @@
 				C96DB5FD1B4BB08E00114622 /* ListDetailViewController.m in Sources */,
 				C96DB5EC1B4ABA4B00114622 /* FMDatabaseAdditions.m in Sources */,
 				C96DB5EF1B4ABA4B00114622 /* FMResultSet.m in Sources */,
+				C96DB6051B4D0BC100114622 /* IconPickerViewController.m in Sources */,
 				C9A46AFA1B4A576200A9468D /* NSArray+Assemble.m in Sources */,
 				C96DB5F71B4B994200114622 /* AllListsViewController.m in Sources */,
 				C9A46B001B4A5B5700A9468D /* NSString+Format.m in Sources */,
 				C9D3EB151A81D0FD00D8325A /* ItemDetailViewController.m in Sources */,
 				C9A46B0A1B4A7E8C00A9468D /* ChecklistItemModel.m in Sources */,
 				C96DB5FA1B4B9D9700114622 /* ChecklistModel.m in Sources */,
+				C96DB6081B4D3C2800114622 /* NSDate+Assemble.m in Sources */,
 				C9A46AF31B4A51EB00A9468D /* DBManager.m in Sources */,
 				C9A46AFD1B4A5B3900A9468D /* NSDictionary+Assemble.m in Sources */,
 			);

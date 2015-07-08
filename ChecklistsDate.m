@@ -14,13 +14,20 @@ NSString *const primaryKey = @"INTEGER PRIMARY KEY NOT NULL";
 NSString *const textType = @"TEXT";
 
 //NSString *const listItemTableName = @"listItem";
+NSString *const iconName = @"iconName";
+
 NSString *const listItemID = @"listItem_id";
 NSString *const listItemText = @"listItem_text";
 NSString *const listItemChecked = @"checked";
+NSString *const listItemDueDate = @"dueDate";
+NSString *const listItemShouldRemind = @"shouldRemind";
 
 NSString *const listsTableName = @"lists";
 NSString *const listsID = @"lists_id";
 NSString *const listsName = @"lists_name";
+
+NSString *const ChecklistIndex = @"ChecklistIndex";
+NSString *const firstTime = @"FirstTime";
 
 @synthesize dbManager;
 

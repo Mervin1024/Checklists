@@ -11,21 +11,24 @@
 @interface ChecklistItemModel : NSObject
 
 - (ChecklistItemModel *)initChecklists;
-- (ChecklistItemModel *)initWithTableName:(NSString *)name ListID:(NSString *)listID Text:(NSString *)text andChecked:(BOOL)check;
-//+ (int) countOfLists;
+- (ChecklistItemModel *)initWithTableName:(NSString *)name ListID:(NSString *)listID Text:(NSString *)text Checked:(BOOL)check dueDate:(NSDate *)date shouldRemind:(BOOL)remind;;
 + (NSArray *) arrayOfProperties;
 - (NSDictionary *) dictionaryOfdata;
-//+ (NSArray *) arrayOfObjects:(NSArray *)objects;
-//+ (NSDictionary *) dictionaryOfObject:(id)object;
 + (NSDictionary *) dictionaryOfPropertiesAndTypes;
 - (void) deleteItemWithID:(NSString *)listID;
-- (NSDictionary *) dictionaryOfText:(NSString *)text;
 - (void) toggleChecked;
 - (NSString *) stringWithChecked;
+- (NSString *)stringWithRemind;
+- (void) insertItemToTable;
++ (NSArray *) arrayBySelectWhere:(NSDictionary *)conditions orderBy:(NSArray *)order from:(long)from to:(long)to;
+- (void) updateStateToTable;
+- (void) updateCheckedToTable;
 
 @property (nonatomic) NSString *list_tableName;
 @property (nonatomic) NSString *list_id;
 @property (nonatomic) NSString *list_text;
 @property (nonatomic,assign) BOOL checked;
 @property (nonatomic) NSArray *columns;
+@property (nonatomic) NSDate *dueDate;
+@property (nonatomic) BOOL shouldRemind;
 @end

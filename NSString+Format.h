@@ -12,5 +12,6 @@
 
 - (NSString *) stringSwapWithBoundary:(NSString *)boundary;
 - (BOOL) isYes;
+- (NSDate *)dateFromString;
 
 @end

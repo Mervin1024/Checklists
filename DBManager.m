@@ -39,13 +39,13 @@
 - (id)init{
     self = [super init];
     if (self) {
-        dBQueue = [FMDatabaseQueue databaseQueueWithPath:[self dbPath:@"Checklists_db"]];
+        dBQueue = [FMDatabaseQueue databaseQueueWithPath:[self dbPath:@"Checklists3_db"]];
     }
     return self;
 }
 #pragma mark - connectDB
 - (void) connectDB{
-    dBQueue = [FMDatabaseQueue databaseQueueWithPath:[self dbPath:@"Checklists_db"]];
+    dBQueue = [FMDatabaseQueue databaseQueueWithPath:[self dbPath:@"Checklists3_db"]];
 }
 #pragma mark - createTable
 - (BOOL) createTableName:(NSString *)name columns:(NSDictionary *)columns{
@@ -62,9 +62,9 @@
 //    NSLog(@"select");
     NSString *sql = [NSString stringWithFormat:@"SELECT * FROM '%@'",name];
     if (conditions) {
-        sql = [sql stringByAppendingString:[NSString stringWithFormat:@" WHERE %@",[conditions stringByJoinEntireWithSpaceCharacter:@"=" andBoundary:@" AND "]]];
+        sql = [sql stringByAppendingString:[NSString stringWithFormat:@" WHERE %@",[conditions stringByJoinEntireWithSpaceCharacter:@" = " andBoundary:@" AND "]]];
     }
-    
+//    NSLog(@"select:%@",sql);
     __block NSMutableArray *data = [NSMutableArray array];
     [dBQueue inDatabase:^(FMDatabase *db){
         FMResultSet *rs = [db executeQuery:sql];
@@ -73,8 +73,8 @@
             for (int i = 0; i < columns.count; i++) {
                 NSString *value = [rs stringForColumn:columns[i]];
                 if (value != nil) {
-//                    NSLog(@"Count:%d",i);
-//                    NSLog(@"key:%@,value:%@",columns[i],value);
+//                    NSLog(@"SelectCount:%d",i);
+//                    NSLog(@"Selectkey:%@,value:%@",columns[i],value);
                     [item setValue:value forKey:columns[i]];
                 }
             }
@@ -85,14 +85,14 @@
     return data;
 }
 
-- (NSArray *) arrayOfAllBySelect:(NSArray *)columns fromTable:(NSString *)name where:(NSDictionary *)conditions orderBy:(NSDictionary *)order{
+- (NSArray *) arrayOfAllBySelect:(NSArray *)columns fromTable:(NSString *)name where:(NSDictionary *)conditions orderBy:(NSArray *)order{
     __block NSMutableArray *data = [NSMutableArray array];
     NSString *sql = [NSString stringWithFormat:@"SELECT * FROM '%@'",name];
     if (conditions) {
-        sql = [sql stringByAppendingString:[NSString stringWithFormat:@" WHERE %@",[conditions stringByJoinEntireWithSpaceCharacter:@"=" andBoundary:@" AND "]]];
+        sql = [sql stringByAppendingString:[NSString stringWithFormat:@" WHERE %@",[conditions stringByJoinEntireWithSpaceCharacter:@" = " andBoundary:@" AND "]]];
     }
     if (order) {
-        sql = [sql stringByAppendingString:[NSString stringWithFormat:@" ORDER BY %@",[order stringByJoinEntireWithSpaceCharacter:@" " andBoundary:@","]]];
+        sql = [sql stringByAppendingString:[NSString stringWithFormat:@" ORDER BY %@",[order stringByJoinSimplyWithBoundary:@","]]];
     }
     [dBQueue inDatabase:^(FMDatabase *db){
         FMResultSet *rs = [db executeQuery:sql];
@@ -113,25 +113,37 @@
     return data;
 }
 
-- (NSArray *) arrayBySelect:(NSArray *)columns fromTable:(NSString *)name where:(NSDictionary *)conditions orderBy:(NSDictionary *)order from:(long)from to:(long)to{
+- (NSArray *) arrayBySelect:(NSArray *)columns fromTable:(NSString *)name where:(NSDictionary *)conditions orderBy:(NSArray *)order from:(long)from to:(long)to{
     __block NSMutableArray *data = [NSMutableArray array];
     NSString *sql = [NSString stringWithFormat:@"SELECT * FROM '%@'",name];
     if (conditions) {
-        sql = [sql stringByAppendingString:[NSString stringWithFormat:@" WHERE %@",[conditions stringByJoinEntireWithSpaceCharacter:@"=" andBoundary:@" AND "]]];
+        sql = [sql stringByAppendingString:[NSString stringWithFormat:@" WHERE %@",[conditions stringByJoinEntireWithSpaceCharacter:@" = " andBoundary:@" AND "]]];
     }
     if (order) {
-        sql = [sql stringByAppendingString:[NSString stringWithFormat:@" ORDER BY %@",[order stringByJoinEntireWithSpaceCharacter:@" " andBoundary:@","]]];
+        sql = [sql stringByAppendingString:[NSString stringWithFormat:@" ORDER BY %@",[order stringByJoinSimplyWithBoundary:@","]]];
     }
+//    NSString *_from = @"1";
+//    NSString *_to = @"1";
+    long _to = 100000;
+    long _from = 0;
+    if (from > 0) {
+         _from = from;
+        if (to > from) {
+            _to = to;
+        }
+    }
+    
+    NSLog(@"select:%@",sql);
     [dBQueue inDatabase:^(FMDatabase *db){
         FMResultSet *rs = [db executeQuery:sql];
-        for (int first = 0; [rs next] && first < to; first++) {
-            NSLog(@"Count in seart:%d",first);
-            if (first >= from && first < to) {
+        for (int first = 0; [rs next] && first < _to; first++) {
+//            NSLog(@"Count in seart:%d",first);
+            if (first >= _from && first < _to) {
                 NSMutableDictionary *itme = [NSMutableDictionary dictionary];
                 for (int i = 0; i < columns.count; i++) {
                     NSString *value = [rs stringForColumn:columns[i]];
                     if (value != nil) {
-                        NSLog(@"Count:%d",i);
+//                        NSLog(@"Count:%d",i);
                         [itme setValue:value forKey:columns[i]];
                     }
                 }
@@ -143,10 +155,14 @@
     return data;
 }
 
-- (int) countOfItemsNumberInTable:(NSString *)name{
+- (int) countOfItemsNumberInTable:(NSString *)name where:(NSDictionary *)conditions{
     __block int itemsCount = 0;
+    NSString *sql = [NSString stringWithFormat:@"SELECT COUNT(*) FROM '%@'",name];
+    if (conditions) {
+        sql = [sql stringByAppendingString:[NSString stringWithFormat:@" WHERE %@",[conditions stringByJoinEntireWithSpaceCharacter:@" = " andBoundary:@" AND "]]];
+    }
     [dBQueue inDatabase:^(FMDatabase *db){
-        itemsCount = [db intForQuery:[NSString stringWithFormat:@"SELECT COUNT(*) FROM '%@'",name]];
+        itemsCount = [db intForQuery:sql];
     }];
 //    NSLog(@"count of items:%d",itemsCount);
     return itemsCount;
@@ -164,16 +180,16 @@
 }
 #pragma mark - updateItems
 - (BOOL) updateItemsTableName:(NSString *)name set:(NSDictionary *)columns where:(NSDictionary *)conditions{
-    NSString *sql = [NSString stringWithFormat:@"UPDATE '%@' SET %@ WHERE %@",name,[columns stringByJoinEntireWithSpaceCharacter:@"=" andBoundary:@" AND "],[conditions stringByJoinEntireWithSpaceCharacter:@"=" andBoundary:@" AND "]];
+    NSString *sql = [NSString stringWithFormat:@"UPDATE '%@' SET %@ WHERE %@",name,[columns stringByJoinEntireWithSpaceCharacter:@" = " andBoundary:@" AND "],[conditions stringByJoinEntireWithSpaceCharacter:@" = " andBoundary:@" AND "]];
     [dBQueue inDatabase:^(FMDatabase *db){
         [db executeUpdate:sql];
-        NSLog(@"updateItems");
+        NSLog(@"updateItems:%@",sql);
     }];
     return YES;
 }
 #pragma mark - delete=
 - (BOOL) deleteFromTableName:(NSString *)name where:(NSDictionary *)conditions{
-    NSString *sql = [NSString stringWithFormat:@"DELETE FROM '%@' WHERE %@",name,[conditions stringByJoinEntireWithSpaceCharacter:@"=" andBoundary:@" AND "]];
+    NSString *sql = [NSString stringWithFormat:@"DELETE FROM '%@' WHERE %@",name,[conditions stringByJoinEntireWithSpaceCharacter:@" = " andBoundary:@" AND "]];
     [dBQueue inDatabase:^(FMDatabase *db){
         [db executeUpdate:sql];
         NSLog(@"deleteItem");
