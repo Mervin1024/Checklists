@@ -21,11 +21,9 @@
         NSString *value = [self objectForKey:key];
         NSString *assemble = key;
         assemble = [assemble stringByAppendingFormat:@"%@%@",spaceCharacter,value];
-//        NSLog(@"assemble:%@",assemble);
         [pairs addObject:assemble];
     }
     string = [pairs stringByJoinSimplyWithBoundary:boundary];
-//    NSLog(@"NSDictionary--NSString:%@",string);
     return string;
 }
 
@@ -37,17 +35,18 @@
         NSString *value = [self objectForKey:key];
         NSString *assemble = key;
         assemble = [assemble stringByAppendingFormat:@"%@%@",spaceCharacter,[value stringSwapWithBoundary:@"'"]];
-//        NSLog(@"assemble:%@",assemble);
         [pairs addObject:assemble];
     }
     string = [pairs stringByJoinSimplyWithBoundary:boundary];
-//    NSLog(@"NSDictionary--NSString:%@",string);
     return string;
 }
 
 - (NSComparisonResult)comparelist:(NSDictionary *)otherObject{
-//    NSLog(@"compares");
     return [[self objectForKey:listsName] localizedStandardCompare:[otherObject objectForKey:listsName]];
+}
+
+- (NSComparisonResult)compareItem:(NSDictionary *)otherObject{
+    return [[self objectForKey:listItemDueDate] localizedStandardCompare:[otherObject objectForKey:listItemDueDate]];
 }
 
 @end

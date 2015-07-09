@@ -14,7 +14,7 @@
 - (int) countUncheckedItems;
 + (NSArray *) arrayOfPropertier;
 + (NSDictionary *) dictionaryOfPropertiesAndTypes;
-+ (void) deletListWithID:(NSString *)list_id;
+- (void) deletListFromTable;
 //- (NSDictionary *) dictionaryOfText:(NSString *)text iconName:(NSString *)imageName;
 - (NSDictionary *) dictionaryOfdata;
 - (void) updateNameAndIconNameToTable;

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface ChecklistItemModel : NSObject
 
@@ -20,9 +21,11 @@
 - (NSString *) stringWithChecked;
 - (NSString *)stringWithRemind;
 - (void) insertItemToTable;
-+ (NSArray *) arrayBySelectWhere:(NSDictionary *)conditions orderBy:(NSArray *)order from:(long)from to:(long)to;
+- (NSArray *) arrayBySelectWhere:(NSDictionary *)conditions orderBy:(NSArray *)order from:(long)from to:(long)to;
 - (void) updateStateToTable;
 - (void) updateCheckedToTable;
+- (void) scheduleNotification;
+-(UILocalNotification*)notificationForThisItem;
 
 @property (nonatomic) NSString *list_tableName;
 @property (nonatomic) NSString *list_id;

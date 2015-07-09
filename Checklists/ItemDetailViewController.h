@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+
+#pragma mark - Delegate
 @class ItemDetailViewController;
 @class ChecklistItemModel;
 @protocol ItemDetailViewControllerDelegate <NSObject>
@@ -16,6 +18,8 @@
 -(void)itemDetailViewControllerDidCancel:(ItemDetailViewController*)controller;
 -(void)itemDetailViewController:(ItemDetailViewController*)controller didFinishAddingItem:(ChecklistItemModel*)item;
 @end
+
+#pragma mark - interface
 @interface ItemDetailViewController : UITableViewController<UITextFieldDelegate>
 @property(weak,nonatomic) id <ItemDetailViewControllerDelegate> delegate;
 @property(strong,nonatomic) ChecklistItemModel *itemToEdit;

@@ -23,39 +23,17 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [UserDefaults registerDefaults];
     [self setBasicDataInitialization];
-//    [self localNotification];
     return YES;
-}
-
-- (void)localNotification{
-    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
-        
-        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
-        
-    }
-    NSDate *date = [NSDate dateWithTimeIntervalSinceNow:10];
-    UILocalNotification *localNotification = [[UILocalNotification alloc]init];
-    localNotification.fireDate = date;
-    localNotification.timeZone = [NSTimeZone defaultTimeZone];
-    localNotification.alertBody = @"啦啦啦";
-    localNotification.soundName = UILocalNotificationDefaultSoundName;
-    [[UIApplication sharedApplication]scheduleLocalNotification:localNotification];
 }
 
 - (void)setBasicDataInitialization{
     DBManager *dbManager = [ChecklistsDate shareManager].dbManager;
-    //creat table
-//    [dbManager excuteSQLs:@[[NSString stringWithFormat:@"DROP TABLE %@",listItemTableName]]];
-    
-//    [dbManager excuteSQLs:@[[NSString stringWithFormat:@"DROP TABLE %@",listsTableName]]];
-    
     [dbManager createTableName:listsTableName columns:[ChecklistModel dictionaryOfPropertiesAndTypes]];
     
-//    [dbManager createTableName:listItemTableName columns:[ChecklistItemModel dictionaryOfPropertiesAndTypes]];
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-    NSLog(@"didReceivedLocalNotification %@",notification);
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

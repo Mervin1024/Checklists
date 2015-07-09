@@ -11,12 +11,12 @@
 @implementation IconPickerViewController{
     NSArray *_icons;
 }
-
+#pragma mark - viewDidLoad
 - (void) viewDidLoad{
     [super viewDidLoad];
-    _icons = @[@"No icon",@"folder",@"cake",@"download",@"clock",@"shopping",@"trips"];
+    _icons = @[@"No icon",@"folder",@"cake",@"download",@"clock",@"shopping",@"trips",@"Checked",@"unChecked",@"appIcon"];
 }
-#pragma mark - Table view data source
+#pragma mark - tableView
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [_icons count];
 }
@@ -25,7 +25,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IconCell"];
     NSString *icon = _icons[indexPath.row];
     cell.textLabel.text = icon;
-    cell.imageView.image = [UIImage imageNamed:icon];
+    cell.imageView.image = [UIImage imageWithCGImage:[[UIImage imageNamed:icon] CGImage] scale:([UIImage imageNamed:icon].scale * 2.2) orientation:([UIImage imageNamed:icon].imageOrientation)];
     return cell;
 }
 

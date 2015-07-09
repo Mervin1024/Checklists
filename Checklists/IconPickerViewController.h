@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#pragma mark - Delegate
 @class IconPickerViewController;
 @protocol  IconPickerViewControllerDelegate<NSObject>
 
@@ -14,6 +16,7 @@
 
 @end
 
+#pragma mark - interface
 @interface IconPickerViewController : UITableViewController
 
 @property (nonatomic,weak) id<IconPickerViewControllerDelegate> delegate;

@@ -9,11 +9,10 @@
 #import "ChecklistsDate.h"
 
 @implementation ChecklistsDate
-
+#pragma mark - const NSString
 NSString *const primaryKey = @"INTEGER PRIMARY KEY NOT NULL";
 NSString *const textType = @"TEXT";
 
-//NSString *const listItemTableName = @"listItem";
 NSString *const iconName = @"iconName";
 
 NSString *const listItemID = @"listItem_id";
@@ -32,7 +31,7 @@ NSString *const firstTime = @"FirstTime";
 @synthesize dbManager;
 
 
-
+#pragma mark- init
 - (id) init{
     self = [super init];
     if (self) {
@@ -40,7 +39,7 @@ NSString *const firstTime = @"FirstTime";
     }
     return self;
 }
-
+#pragma mark- shareManager
 + (ChecklistsDate *)shareManager{
     static ChecklistsDate *shareAccountManagerInstance = nil;
     static dispatch_once_t predicate;

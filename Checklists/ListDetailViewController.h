@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "IconPickerViewController.h"
 
+#pragma mark - Delegate
 @class ChecklistModel;
 @class ListDetailViewController;
 @protocol ListDetailViewControllerDelegate <NSObject>
@@ -19,6 +20,7 @@
 
 @end
 
+#pragma mark - interface
 @interface ListDetailViewController : UITableViewController<UITextFieldDelegate,IconPickerViewControllerDelegate>
 
 @property (nonatomic,weak)IBOutlet UITextField *textField;

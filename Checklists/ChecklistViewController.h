@@ -14,7 +14,4 @@
 @interface ChecklistViewController : UITableViewController<ItemDetailViewControllerDelegate> 
 
 @property (nonatomic,strong) ChecklistModel *checklist;
-//@property (nonatomic) NSInteger count;
-//@property (nonatomic) NSInteger sizeOfRefresh;
-//@property (nonatomic) NSArray *columns;
 @end

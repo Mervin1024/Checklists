@@ -19,7 +19,6 @@
             string = [string stringByAppendingString:boundary];
         }
     }
-//    NSLog(@"NSArray--NSString:%@",string);
     return string;
 }
 
@@ -31,7 +30,6 @@
             string = [string stringByAppendingString:boundary];
         }
     }
-//    NSLog(@"NSArray--NSString:%@",string);
     return string;
 }
 

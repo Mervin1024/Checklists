@@ -19,7 +19,7 @@
 @synthesize columns;
 @synthesize listItems;
 @synthesize listIconName;
-
+#pragma mark- init
 - (ChecklistModel *)init{
     if ((self = [super init])) {
         dbManager = [ChecklistsDate shareManager].dbManager;
@@ -36,7 +36,7 @@
         columns = [ChecklistModel arrayOfPropertier];
         list_name = name;
         listItems = [NSMutableArray array];
-        [listItems addObjectsFromArray:[dbManager arrayOfAllBySelect:[ChecklistItemModel arrayOfProperties] fromTable:name where:nil]];
+        [listItems addObjectsFromArray:[dbManager arrayBySelect:[ChecklistItemModel arrayOfProperties] fromTable:name where:nil orderBy:@[listItemDueDate,listItemText] from:0 to:0]];
         if (listID) {
             list_id = listID;
         }
@@ -46,7 +46,7 @@
     }
     return self;
 }
-
+#pragma mark- query
 - (int) countUncheckedItems{
     int count = 0;
     for (NSDictionary *item in self.listItems) {
@@ -57,7 +57,7 @@
     }
     return count;
 }
-
+#pragma mark- dictionaryOfChekclist
 + (NSArray *) arrayOfPropertier{
     return @[listsID,listsName,iconName];
 }
@@ -67,34 +67,23 @@
     return [NSDictionary dictionaryWithObjects:types forKeys:[ChecklistModel arrayOfPropertier]];
 }
 
-+ (void) deletListWithID:(NSString *)list_id{
-    DBManager *dbManager = [ChecklistsDate shareManager].dbManager;
-    [dbManager deleteFromTableName:listsTableName where:@{listsID:list_id}];
-}
-
-//- (NSDictionary *) dictionaryOfText:(NSString *)text iconName:(NSString *)imageName{
-//    list_name = text;
-//    NSMutableArray *values = [NSMutableArray arrayWithObject:text];
-//    NSMutableArray *keys = [NSMutableArray arrayWithObject:listsName];
-//    if (imageName) {
-//        listIconName = imageName;
-//        [values addObject:imageName];
-//        [keys addObject:iconName];
-//    }
-//    return [NSDictionary dictionaryWithObjects:values forKeys:keys];
-//}
-
 - (NSDictionary *) dictionaryOfdata{
     if (list_id) {
         return [NSDictionary dictionaryWithObjects:@[list_id,list_name,listIconName] forKeys:@[listsID,listsName,iconName]];
     }
     return [NSDictionary dictionaryWithObjects:@[list_name,listIconName] forKeys:@[listsName,iconName]];
 }
-
+#pragma mark- operateToDBManager
 - (void) updateNameAndIconNameToTable{
     [dbManager updateItemsTableName:listsTableName set:@{listsName:self.list_name} where:@{listsID:self.list_id}];
     [dbManager updateItemsTableName:listsTableName set:@{iconName:self.listIconName} where:@{listsID:self.list_id}];
 }
+
+- (void) deletListFromTable{
+    [dbManager deleteFromTableName:listsTableName where:@{listsID:list_id}];
+    [dbManager dropTableName:list_name];
+}
+
 
 + (NSArray *)arrayBySelectWhere:(NSDictionary *)conditions orderBy:(NSArray *)order from:(long)from to:(long)to{
     return [[ChecklistsDate shareManager].dbManager arrayBySelect:[ChecklistModel arrayOfPropertier] fromTable:listsTableName where:conditions orderBy:order from:from to:to];

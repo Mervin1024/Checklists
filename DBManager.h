@@ -14,8 +14,6 @@
 @interface DBManager : NSObject
 - (void) connectDB;
 - (BOOL) createTableName:(NSString *)name columns:(NSDictionary *)columns;
-- (NSArray *) arrayOfAllBySelect:(NSArray *)columns fromTable:(NSString *)name where:(NSDictionary *)conditions;
-- (NSArray *) arrayOfAllBySelect:(NSArray *)columns fromTable:(NSString *)name where:(NSDictionary *)conditions orderBy:(NSArray *)order;
 - (NSArray *) arrayBySelect:(NSArray *)columns fromTable:(NSString *)name where:(NSDictionary *)conditions orderBy:(NSArray *)order from:(long)from to:(long)to;
 - (int) countOfItemsNumberInTable:(NSString *)name where:(NSDictionary *)conditions;
 - (BOOL) insertItemsToTableName:(NSString *)name columns:(NSDictionary *)columns;
