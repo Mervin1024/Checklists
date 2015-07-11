@@ -31,7 +31,7 @@
 @property (nonatomic,copy) NSString *list_id;
 @property (nonatomic,copy) NSString *list_text;
 @property (nonatomic,assign) BOOL checked;
-@property (nonatomic,retain) NSArray *columns;
-@property (nonatomic,retain) NSDate *dueDate;
+@property (nonatomic,strong) NSArray *columns;
+@property (nonatomic,strong) NSDate *dueDate;
 @property (nonatomic,assign) BOOL shouldRemind;
 @end

@@ -30,7 +30,7 @@
 		<key>6FCCE9F98B95CC1C538B77510C23DEC247CB6B25</key>
 		<string>../../../MyWeibo</string>
 		<key>D596A02707E3AAEC8F0C2BC3458450947D3340C0</key>
-		<string>../../../../MyWeibo</string>
+		<string>../../../MyWeibo</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/Mervin1024/Checklists.git</string>
@@ -68,7 +68,7 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>D596A02707E3AAEC8F0C2BC3458450947D3340C0</string>
+			<string>6FCCE9F98B95CC1C538B77510C23DEC247CB6B25</string>
 			<key>IDESourceControlWCCName</key>
 			<string>MyWeibo</string>
 		</dict>
@@ -76,7 +76,7 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>6FCCE9F98B95CC1C538B77510C23DEC247CB6B25</string>
+			<string>D596A02707E3AAEC8F0C2BC3458450947D3340C0</string>
 			<key>IDESourceControlWCCName</key>
 			<string>MyWeibo</string>
 		</dict>

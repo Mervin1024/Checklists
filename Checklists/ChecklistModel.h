@@ -15,16 +15,14 @@
 + (NSArray *) arrayOfPropertier;
 + (NSDictionary *) dictionaryOfPropertiesAndTypes;
 - (void) deletListFromTable;
-//- (NSDictionary *) dictionaryOfText:(NSString *)text iconName:(NSString *)imageName;
 - (NSDictionary *) dictionaryOfdata;
 - (void) updateNameAndIconNameToTable;
 + (NSArray *) arrayBySelectWhere:(NSDictionary *)conditions orderBy:(NSArray *)order from:(long)from to:(long)to;
 - (void) insertItemToTable;
-//- (void) updateIconNameFromTable;
 
 @property (nonatomic,copy) NSString *list_id;
 @property (nonatomic,copy) NSString *list_name;
-@property (nonatomic,retain) NSMutableArray *listItems;
-@property (nonatomic,retain) NSArray *columns;
+@property (nonatomic,strong) NSMutableArray *listItems;
+@property (nonatomic,strong) NSArray *columns;
 @property (nonatomic,copy) NSString *listIconName;
 @end
