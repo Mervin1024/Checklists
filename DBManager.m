@@ -48,7 +48,7 @@
 #pragma mark - createTable
 - (BOOL) createTableName:(NSString *)name columns:(NSDictionary *)columns{
     NSString *sqlCreateTable = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS '%@' (%@)",name,[self makeSqlString:columns]];
-    NSLog(@"sqlCreateTable:%@",sqlCreateTable);
+//    NSLog(@"sqlCreateTable:%@",sqlCreateTable);
     [dBQueue inDatabase:^(FMDatabase *db){
         [db executeUpdate:sqlCreateTable];
     }];

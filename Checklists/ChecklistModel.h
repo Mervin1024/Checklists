@@ -22,9 +22,9 @@
 - (void) insertItemToTable;
 //- (void) updateIconNameFromTable;
 
-@property (nonatomic) NSString *list_id;
-@property (nonatomic) NSString *list_name;
-@property (nonatomic) NSMutableArray *listItems;
-@property (nonatomic) NSArray *columns;
-@property (nonatomic) NSString *listIconName;
+@property (nonatomic,copy) NSString *list_id;
+@property (nonatomic,copy) NSString *list_name;
+@property (nonatomic,retain) NSMutableArray *listItems;
+@property (nonatomic,retain) NSArray *columns;
+@property (nonatomic,copy) NSString *listIconName;
 @end

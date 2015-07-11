@@ -27,11 +27,11 @@
 - (void) scheduleNotification;
 -(UILocalNotification*)notificationForThisItem;
 
-@property (nonatomic) NSString *list_tableName;
-@property (nonatomic) NSString *list_id;
-@property (nonatomic) NSString *list_text;
+@property (nonatomic,copy) NSString *list_tableName;
+@property (nonatomic,copy) NSString *list_id;
+@property (nonatomic,copy) NSString *list_text;
 @property (nonatomic,assign) BOOL checked;
-@property (nonatomic) NSArray *columns;
-@property (nonatomic) NSDate *dueDate;
-@property (nonatomic) BOOL shouldRemind;
+@property (nonatomic,retain) NSArray *columns;
+@property (nonatomic,retain) NSDate *dueDate;
+@property (nonatomic,assign) BOOL shouldRemind;
 @end

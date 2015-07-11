@@ -47,6 +47,6 @@
         </view>
     </objects>
     <resources>
-        <image name="enter" width="172" height="249"/>
+        <image name="enter" width="375" height="667"/>
     </resources>
 </document>

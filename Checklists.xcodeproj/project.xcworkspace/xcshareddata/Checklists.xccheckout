@@ -14,6 +14,8 @@
 		<string>https://github.com/ccgus/fmdb.git</string>
 		<key>3232BC16C65D967AD8D8C579EC2BAABB167E9C91</key>
 		<string>https://github.com/Mervin1024/Checklists.git</string>
+		<key>6FCCE9F98B95CC1C538B77510C23DEC247CB6B25</key>
+		<string>https://github.com/Focinfi/MyWeibo.git</string>
 		<key>D596A02707E3AAEC8F0C2BC3458450947D3340C0</key>
 		<string>https://github.com/Focinfi/MyWeibo.git</string>
 	</dict>
@@ -25,8 +27,10 @@
 		<string>../../../Downloads/MyWeibo/fmdb</string>
 		<key>3232BC16C65D967AD8D8C579EC2BAABB167E9C91</key>
 		<string>../..</string>
-		<key>D596A02707E3AAEC8F0C2BC3458450947D3340C0</key>
+		<key>6FCCE9F98B95CC1C538B77510C23DEC247CB6B25</key>
 		<string>../../../MyWeibo</string>
+		<key>D596A02707E3AAEC8F0C2BC3458450947D3340C0</key>
+		<string>../../../../MyWeibo</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/Mervin1024/Checklists.git</string>
@@ -51,6 +55,14 @@
 			<string>04101981B66E318109934C9516F88D824BB96459</string>
 			<key>IDESourceControlWCCName</key>
 			<string>fmdb</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6FCCE9F98B95CC1C538B77510C23DEC247CB6B25</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MyWeibo</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
