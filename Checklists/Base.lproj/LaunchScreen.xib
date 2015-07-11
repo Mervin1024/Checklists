@@ -23,7 +23,7 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="enter" highlightedImage="enter" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aSo-Ew-kfd">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="enter" translatesAutoresizingMaskIntoConstraints="NO" id="aSo-Ew-kfd">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="495"/>
                 </imageView>
             </subviews>

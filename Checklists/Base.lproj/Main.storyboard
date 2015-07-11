@@ -21,12 +21,12 @@
                     <navigationItem key="navigationItem" title="Checklists" id="kzN-wa-QG7">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="9eX-wP-hMa">
                             <connections>
-                                <segue destination="6qr-o6-8LH" kind="modal" identifier="AddChecklist" id="P2H-ae-Dzo"/>
+                                <segue destination="6qr-o6-8LH" kind="presentation" identifier="AddChecklist" id="P2H-ae-Dzo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="u9h-UU-bFV" kind="push" identifier="ShowChecklist" id="SGd-lr-BuD"/>
+                        <segue destination="u9h-UU-bFV" kind="show" identifier="ShowChecklist" id="SGd-lr-BuD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mUj-aL-R3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -116,7 +116,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="U3B-3G-JDf" kind="modal" identifier="EditItem" trigger="accessoryAction" id="fIx-Un-caX"/>
+                                    <segue destination="U3B-3G-JDf" kind="presentation" identifier="EditItem" trigger="accessoryAction" id="fIx-Un-caX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -128,7 +128,7 @@
                     <navigationItem key="navigationItem" title="Checklist Name" id="ypF-bJ-noz">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4Pf-j1-i8m">
                             <connections>
-                                <segue destination="U3B-3G-JDf" kind="modal" identifier="AddItem" id="m0N-c5-8hS"/>
+                                <segue destination="U3B-3G-JDf" kind="presentation" identifier="AddItem" id="m0N-c5-8hS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -325,12 +325,12 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="aus-kS-2hV" secondAttribute="centerY" id="6sU-tS-CXP"/>
-                                                <constraint firstItem="aus-kS-2hV" firstAttribute="trailing" secondItem="s2M-nV-gfP" secondAttribute="trailingMargin" id="hK1-Og-Hfu"/>
+                                                <constraint firstAttribute="centerY" secondItem="aus-kS-2hV" secondAttribute="centerY" constant="-0.5" id="e6M-i0-RKX"/>
+                                                <constraint firstItem="aus-kS-2hV" firstAttribute="trailing" secondItem="s2M-nV-gfP" secondAttribute="trailingMargin" id="p4s-ro-IVZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="4y5-R5-C8p" kind="push" identifier="PickIcon" id="Sh4-e8-jjN"/>
+                                            <segue destination="4y5-R5-C8p" kind="show" identifier="PickIcon" id="Sh4-e8-jjN"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -369,7 +369,7 @@
         <image name="unChecked" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fIx-Un-caX"/>
+        <segue reference="m0N-c5-8hS"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.061754193823867709" green="0.75" blue="0.74725886465942692" alpha="1" colorSpace="calibratedRGB"/>
 </document>

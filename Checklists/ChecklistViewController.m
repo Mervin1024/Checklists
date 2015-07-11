@@ -12,6 +12,7 @@
 #import "DBManager.h"
 #import "ChecklistsDate.h"
 #import "NSString+Format.h"
+#import "NSDictionary+Assemble.h"
 
 @interface ChecklistViewController (){
     DBManager *dbManager;
