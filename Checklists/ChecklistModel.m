@@ -85,7 +85,7 @@
 }
 
 
-+ (NSArray *)arrayBySelectWhere:(NSDictionary *)conditions orderBy:(NSArray *)order from:(long)from to:(long)to{
++ (NSArray *)arrayBySelectedWhere:(NSDictionary *)conditions orderBy:(NSArray *)order from:(long)from to:(long)to{
     return [[ChecklistsDate shareManager].dbManager arrayBySelect:[ChecklistModel arrayOfPropertier] fromTable:listsTableName where:conditions orderBy:order from:from to:to];
 }
 

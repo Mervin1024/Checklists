@@ -68,6 +68,14 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D596A02707E3AAEC8F0C2BC3458450947D3340C0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MyWeibo</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>6FCCE9F98B95CC1C538B77510C23DEC247CB6B25</string>
 			<key>IDESourceControlWCCName</key>
 			<string>MyWeibo</string>
@@ -76,7 +84,7 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>D596A02707E3AAEC8F0C2BC3458450947D3340C0</string>
+			<string>6FCCE9F98B95CC1C538B77510C23DEC247CB6B25</string>
 			<key>IDESourceControlWCCName</key>
 			<string>MyWeibo</string>
 		</dict>

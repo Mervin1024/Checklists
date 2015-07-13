@@ -17,7 +17,7 @@
 - (void) deletListFromTable;
 - (NSDictionary *) dictionaryOfdata;
 - (void) updateNameAndIconNameToTable;
-+ (NSArray *) arrayBySelectWhere:(NSDictionary *)conditions orderBy:(NSArray *)order from:(long)from to:(long)to;
++ (NSArray *) arrayBySelectedWhere:(NSDictionary *)conditions orderBy:(NSArray *)order from:(long)from to:(long)to;
 - (void) insertItemToTable;
 
 @property (nonatomic,copy) NSString *list_id;

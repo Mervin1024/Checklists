@@ -74,7 +74,7 @@
 }
 
 - (void) insertToLists{
-    [_lists addObjectsFromArray:[ChecklistModel arrayBySelectWhere:nil orderBy:nil from:0 to:0]];
+    [_lists addObjectsFromArray:[ChecklistModel arrayBySelectedWhere:nil orderBy:nil from:0 to:0]];
     if (_lists.count > 0) {
         [_lists sortUsingSelector:@selector(comparelist:)];//数组排序
     }
@@ -89,7 +89,7 @@
     [checklist insertItemToTable];
     [dbManager createTableName:checklist.list_name columns:[ChecklistItemModel dictionaryOfPropertiesAndTypes]];
     NSInteger newRowIndex = [_lists count];
-    NSArray *list = [ChecklistModel arrayBySelectWhere:nil orderBy:nil from:newRowIndex to:newRowIndex+1];
+    NSArray *list = [ChecklistModel arrayBySelectedWhere:nil orderBy:nil from:newRowIndex to:newRowIndex+1];
     [_lists addObject:list[0]];
     [_lists sortUsingSelector:@selector(comparelist:)];
     [self.tableView reloadData];
@@ -100,7 +100,7 @@
 - (void) listDetailViewController:(ListDetailViewController *)controller didFinishEditingChecklist:(ChecklistModel *)checklist{
     // Editing协议方法实现
     NSString *listID = [[checklist dictionaryOfdata] objectForKey:listsID];
-    NSArray *list = [ChecklistModel arrayBySelectWhere:@{listsID:listID} orderBy:nil from:0 to:0];
+    NSArray *list = [ChecklistModel arrayBySelectedWhere:@{listsID:listID} orderBy:nil from:0 to:0];
     if (![[list[0] objectForKey:listsName] isEqualToString:checklist.list_name]) {
         // 更改ChecklistItem数据库表名
         [dbManager alterTableName:[list[0] objectForKey:listsName] toNewName:checklist.list_name];

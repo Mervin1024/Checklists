@@ -320,13 +320,17 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="folder" translatesAutoresizingMaskIntoConstraints="NO" id="aus-kS-2hV">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder" translatesAutoresizingMaskIntoConstraints="NO" id="aus-kS-2hV">
                                                     <rect key="frame" x="523" y="4" width="36" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="36" id="xLp-g3-fof"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="aus-kS-2hV" secondAttribute="centerY" constant="-0.5" id="e6M-i0-RKX"/>
-                                                <constraint firstItem="aus-kS-2hV" firstAttribute="trailing" secondItem="s2M-nV-gfP" secondAttribute="trailingMargin" id="p4s-ro-IVZ"/>
+                                                <constraint firstItem="aus-kS-2hV" firstAttribute="trailing" secondItem="s2M-nV-gfP" secondAttribute="trailingMargin" id="Cb5-yp-Ng6"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="aus-kS-2hV" secondAttribute="bottom" constant="-5" id="KHT-1S-Suc"/>
+                                                <constraint firstItem="aus-kS-2hV" firstAttribute="top" secondItem="s2M-nV-gfP" secondAttribute="topMargin" constant="-4" id="mJO-OU-DKv"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
